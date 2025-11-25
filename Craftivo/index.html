@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Yomali Senevirathne - Portfolio</title>
+  <meta name="description" content="Portfolio of Yomali Senevirathne">
+  <meta name="keywords" content="Portfolio, Java, Kotlin, Web Development, UI/UX">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom Styles (Enhanced Design) -->
+  <style>
+    :root {
+      --bg-color: #050505;
+      --card-bg: #101214;
+      --text-color: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent-color: #3b82f6; /* Beautiful Blue */
+      --accent-hover: #2563eb;
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --card-radius: 16px;
+      --transition-speed: 0.3s;
+    }
+
+    /* --- Global Reset & Typography --- */
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Raleway', sans-serif;
+      color: #fff;
+    }
+
+    a { text-decoration: none; color: inherit; transition: var(--transition-speed); }
+    a:hover { color: var(--accent-color); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }
+
+    /* --- Header / Navbar --- */
+    #header {
+      background: rgba(5, 5, 5, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 15px 0;
+      transition: all 0.3s;
+    }
+    
+    .logo h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    .navmenu ul li a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin: 0 15px;
+      position: relative;
+    }
+
+    .navmenu ul li a:hover, .navmenu ul li a.active {
+      color: #fff;
+    }
+
+    .navmenu ul li a.active::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--accent-color);
+    }
+
+    .btn-getstarted {
+      background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+      color: #fff !important;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      transition: transform 0.3s ease;
+    }
+    .btn-getstarted:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 40%);
+      padding-top: 80px;
+    }
+
+    .hero img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--glass-border);
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+      margin-bottom: 25px;
+      animation: floatImage 6s ease-in-out infinite;
+      
+      /* Fix for Mobile Overlay Issue: Override main.css absolute positioning */
+      position: relative !important; 
+      z-index: 2;
+    }
+
+    @keyframes floatImage {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: var(--text-muted);
+    }
+    
+    .hero .typed { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); }
+
+    .social-links a {
+      font-size: 24px;
+      margin: 0 10px;
+      display: inline-block;
+      color: var(--text-muted);
+      transition: 0.3s;
+    }
+    .social-links a:hover { color: var(--accent-color); transform: scale(1.1); }
+
+    /* --- Section Titles --- */
+    .section { padding: 80px 0; }
+    .section-title { text-align: center; margin-bottom: 60px; }
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--accent-color);
+      bottom: 0;
+      left: calc(50% - 25px);
+    }
+    .section-title .subtitle {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* --- About Section & Cards --- */
+    .profile-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--card-radius);
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .profile-avatar { position: relative; display: inline-block; margin-bottom: 15px; }
+    .profile-avatar img {
+      width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+      border: 3px solid rgba(59, 130, 246, 0.3);
+    }
+    .status-indicator {
+      width: 15px; height: 15px; background: #22c55e; border-radius: 50%;
+      position: absolute; bottom: 10px; right: 10px; border: 2px solid #000;
+    }
+
+    .stat-item {
+      background: rgba(255,255,255,0.03);
+      padding: 15px;
+      border-radius: 12px;
+      flex: 1;
+    }
+    .stat-item h4 { font-size: 24px; font-weight: 700; color: var(--accent-color); margin: 0; }
+    .stat-item p { font-size: 13px; margin: 0; color: var(--text-muted); }
+
+    .btn-primary-custom {
+      background: transparent; border: 1px solid var(--accent-color); color: var(--accent-color);
+      padding: 8px 20px; border-radius: 8px; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary-custom:hover { background: var(--accent-color); color: #fff; }
+    
+    .btn-secondary-custom {
+      background: rgba(255,255,255,0.05); color: #fff; padding: 8px 20px; border-radius: 8px; font-size: 14px;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary-custom:hover { background: rgba(255,255,255,0.1); }
+
+    /* --- Skills --- */
+    .skill-item { margin-bottom: 20px; }
+    .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #fff !important; }
+    .progress { height: 8px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+    .progress-bar {
+      background: linear-gradient(90deg, var(--accent-color), #60a5fa);
+      transition: width 1.5s ease-in-out;
+      width: 0; /* Animated by JS */
+    }
+
+    /* --- Experience / Projects Cards --- */
+    .exp-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--card-radius);
+      padding: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .exp-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--accent-color); opacity: 0; transition: 0.3s;
+    }
+    .exp-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
+    .exp-card:hover::before { opacity: 1; }
+
+    .company-logo i { font-size: 28px; color: var(--accent-color); }
+    .period-badge {
+      background: rgba(59, 130, 246, 0.15); color: var(--accent-color);
+      padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700;
+    }
+    .exp-card h3 { font-size: 18px; margin-top: 15px; margin-bottom: 5px; }
+    .company-name { color: var(--text-muted); font-size: 14px; font-style: italic; }
+    .description { font-size: 14px; color: #cbd5e1; line-height: 1.6; margin-top: 10px; }
+    .skills-tags .skill-tag {
+        display: inline-block; font-size: 11px; background: rgba(255,255,255,0.05);
+        color: var(--text-muted); padding: 4px 10px; border-radius: 20px; margin-right: 5px; margin-top: 8px;
+    }
+
+    /* --- Education Timeline Styles (New) --- */
+    .timeline-item {
+        position: relative; padding-left: 40px; margin-bottom: 30px;
+        border-left: 2px solid var(--glass-border);
+    }
+    .timeline-item:last-child { border-left: 2px solid transparent; }
+    .timeline-marker {
+        position: absolute; left: -13px; top: 0; width: 24px; height: 24px;
+        background: var(--card-bg); border: 2px solid var(--accent-color);
+        border-radius: 50%; color: var(--accent-color); display: flex;
+        align-items: center; justify-content: center; font-size: 12px;
+    }
+    .education-meta { margin-bottom: 5px; font-size: 13px; color: var(--accent-color); font-weight: 600; }
+    .timeline-content h4 { font-size: 16px; margin-bottom: 5px; }
+    .timeline-content .institution { color: var(--text-muted); font-style: italic; font-size: 14px; }
+    
+    /* --- Certifications Grid Layout (Updated) --- */
+    .certifications-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+        gap: 15px;
+    }
+    @media (max-width: 768px) {
+        .certifications-list {
+            grid-template-columns: 1fr; /* 1 Column on Mobile */
+        }
+    }
+    
+    .certifications-list .cert-item {
+        margin-bottom: 0; /* Remove bottom margin to let gap handle spacing */
+        padding: 15px; 
+        background: rgba(255,255,255,0.02);
+        border-radius: 8px; 
+        border: 1px solid var(--glass-border);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .cert-item .cert-name { display: block; font-weight: 600; font-size: 14px; color: #fff; margin-bottom: 4px; }
+    .cert-item .cert-year { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; display: block; }
+    .cert-item .cert-link a { font-size: 12px; color: var(--accent-color); }
+
+    /* --- skills Grid Styles (New) --- */
+    .service-item {
+        background: var(--card-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--card-radius);
+        padding: 30px 20px;
+        transition: all 0.3s ease;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    .service-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-color);
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+    }
+    .service-item .icon-wrapper {
+        width: 50px; height: 50px; background: rgba(59, 130, 246, 0.1);
+        border-radius: 12px; display: flex; align-items: center; justify-content: center;
+        margin-bottom: 20px; font-size: 24px; color: var(--accent-color);
+    }
+    .service-item h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .service-item p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+    .service-item .read-more {
+        font-size: 13px; font-weight: 600; color: var(--accent-color);
+        display: flex; align-items: center; gap: 5px;
+    }
+    .service-item.featured { border-color: rgba(59, 130, 246, 0.3); background: linear-gradient(180deg, rgba(59, 130, 246, 0.05), var(--card-bg)); }
+    .featured-tag {
+        position: absolute; top: 10px; right: 10px; background: var(--accent-color);
+        color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;
+    }
+    .cta-box {
+        background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+        border: 1px solid var(--accent-color); border-radius: var(--card-radius); padding: 30px;
+    }
+    .cta-btn {
+        display: inline-block; background: var(--accent-color); color: #fff;
+        padding: 10px 25px; border-radius: 50px; font-weight: 600;
+        transition: 0.3s;
+    }
+    .cta-btn:hover { background: var(--accent-hover); color: #fff; transform: translateY(-2px); }
+
+    /* --- Portfolio Grid --- */
+    .portfolio-filters { list-style: none; text-align: center; padding: 0; margin-bottom: 30px; }
+    .portfolio-filters li {
+      display: inline-block; cursor: pointer; padding: 8px 20px; margin: 0 5px;
+      font-size: 14px; font-weight: 600; border-radius: 50px;
+      background: rgba(255,255,255,0.05); color: var(--text-muted); transition: 0.3s;
+    }
+    .portfolio-filters li:hover, .portfolio-filters li.filter-active {
+      background: var(--accent-color); color: #fff;
+    }
+
+    .portfolio-item { margin-bottom: 30px; }
+    .portfolio-wrap {
+      border-radius: 12px; overflow: hidden; position: relative; z-index: 1;
+      border: 1px solid var(--glass-border);
+    }
+    .portfolio-wrap img { width: 100%; height: auto; transition: 0.3s; }
+    .portfolio-wrap:hover img { transform: scale(1.1); }
+    
+    .portfolio-info-overlay {
+      position: absolute; inset: 0; background: rgba(0,0,0,0.7);
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      opacity: 0; transition: 0.3s; z-index: 2;
+    }
+    .portfolio-wrap:hover .portfolio-info-overlay { opacity: 1; }
+    .portfolio-info-overlay h4 { font-size: 18px; font-weight: 600; }
+    .portfolio-links a {
+      background: var(--accent-color); width: 36px; height: 36px; display: inline-flex;
+      align-items: center; justify-content: center; border-radius: 50%; margin: 0 5px; color: #fff;
+    }
+    .portfolio-links a:hover { background: #fff; color: var(--accent-color); }
+
+    /* --- Portfolio Meta Data (New Red Design) --- */
+    .portfolio-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .project-tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        background-color: #0f2829; /* Dark Red/Brown Background */
+        color: #44caff; /* Bright Red Text */
+        padding: 5px 12px;
+        border-radius: 50px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border: 1px solid rgba(255, 68, 68, 0.1);
+    }
+
+    .project-year {
+        color: #64748b; /* Muted Grey/Blue */
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    /* --- Contact Form --- */
+    .info-item {
+      background: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid var(--glass-border);
+      display: flex; align-items: center; gap: 15px; transition: 0.3s;
+    }
+    .info-item:hover { transform: translateY(-3px); }
+    .icon-wrapper {
+      width: 50px; height: 50px; background: rgba(59, 130, 246, 0.1); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--accent-color);
+    }
+    .info-item h3 { font-size: 18px; margin: 0; color: #fff; }
+    .info-item p { margin: 0; color: var(--text-muted); font-size: 14px; }
+
+    .php-email-form input, .php-email-form textarea {
+      background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border);
+      color: #fff; border-radius: 8px; padding: 12px; width: 100%;
+    }
+    .php-email-form input:focus, .php-email-form textarea:focus {
+      outline: none; border-color: var(--accent-color); background: rgba(59, 130, 246, 0.05);
+    }
+    .php-email-form button[type="submit"] {
+      background: var(--accent-color); border: 0; padding: 12px 30px; color: #fff;
+      border-radius: 8px; font-weight: 600; transition: 0.3s; margin-top: 15px;
+    }
+    .php-email-form button[type="submit"]:hover { background: var(--accent-hover); box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); }
+
+    /* Footer */
+    #footer { background: #000; border-top: 1px solid #111; padding: 40px 0; color: #aaa; font-size: 14px; }
+    #footer .copyright { margin-top: 10px; }
+    #footer strong { color: #fff; }
+
+    /* Mobile Tweaks - FIXED FOR OVERLAY ISSUE */
+    @media (max-width: 991px) {
+      .hero {
+        text-align: center;
+        padding-top: 130px; /* Increased padding top */
+        padding-bottom: 60px;
+        height: auto;
+        min-height: auto;
+      }
+      .hero h2 {
+        font-size: 32px;
+        margin-top: 20px; /* Space between image and text */
+      }
+      .hero img {
+        width: 200px !important; /* Smaller image on mobile */
+        height: 200px !important;
+        margin-bottom: 20px; /* Margin to push text down */
+      }
+      .profile-stats { flex-direction: row; }
+    }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <!-- ======================== HEADER ======================== -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">Yomali</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#journey">My Journey</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- ======================== HERO SECTION ======================== -->
+    <section id="hero" class="hero section dark-background">
+      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <img src="assets/img/person/me1.jpeg" alt="Yomali Senevirathne" class="img-fluid" data-aos="zoom-in">
+            <h2>Hi, I'm Yomali Senevirathne</h2>
+            <p>I'm a <span class="typed" data-typed-items="Developer, Designer, Creative Thinker"></span><span class="typed-cursor" aria-hidden="true"></span></p>
+            <div class="social-links mt-4">
+              <a href="https://github.com/yomalisenevirathne" target="_blank"><i class="bi bi-github"></i></a>
+              <a href="https://www.linkedin.com/in/yomalisenevirathne/" target="_blank"><i class="bi bi-linkedin"></i></a>
+              
+              <a href="#"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== ABOUT SECTION ======================== -->
+    <section id="about" class="about section">
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Who I Am</span><br>
+        <h2>About Me</h2>
+        <p class="mx-auto" style="max-width: 700px; color: var(--text-muted);">
+         "Motivated and detail-oriented Undergraduate IT student specializing in Information Technology with strong
+          capabilities in full-stack development, mobile applications, and system design. Experienced in academic projects
+          involving Java, OOP, database systems, and modern UI/UX principles. Passionate about leveraging technical knowledge 
+          to deliver innovative solutions, with a strong career vision of becoming a versatile IT professional."
+        </p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-5">
+          
+          <!-- Left Side: Profile Card -->
+          <div class="col-lg-4" data-aos="fade-right" data-aos-delay="150">
+            <div class="profile-card">
+              <div class="profile-avatar">
+                <img src="assets/img/person/me1.jpeg" class="img-fluid" alt="Yomali">
+                <div class="status-indicator" title="Available for Work"></div>
+              </div>
+              <h3>Yomali Senevirathne</h3>
+              <!-- Color Changed to White/Light -->
+              <p class="mb-3" style="color: rgba(255,255,255,0.8);">Undergraduate Student</p>
+
+              <div class="profile-stats d-flex gap-2 justify-content-center mt-4">
+                <div class="stat-item">
+                  <h4>6+</h4>
+                  <p>Projects</p>
+                </div>
+                <div class="stat-item">
+                  <h4>6+</h4>
+                  <p>Courses</p>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center gap-2 mt-4">
+                <a href="#" class="btn-primary-custom"><i class="bi bi-download"></i> CV</a>
+                <a href="#contact" class="btn-secondary-custom"><i class="bi bi-envelope"></i> Contact</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Bio & Skills -->
+          <div class="col-lg-8" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="mb-3"><b>Transforming Ideas into Digital Reality</b></h2>
+            <!-- Description Text Color Changed to White -->
+            <p class="mb-4" style="color: var(--text-muted);">I am a dedicated Information Technology undergraduate
+              driven by the challenge of solving real-world problems through clean code and effective system 
+              architecture. I am fueled by a curiosity for how complex logic meets user-centric design. The projects
+              in this portfolio showcase my practical application of Object-Oriented Programming (OOP) concepts, mobile
+              app development (Kotlin), and creative database design skills gained through my academic coursework and personal initiatives.</p>
+
+            <div class="row gy-4 mb-5">
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-3">
+                  <i class="bi bi-mortarboard fs-3 text-primary"></i>
+                  <div>
+                    <!-- Label set to light grey, Value set to White -->
+                    <span class="d-block text-uppercase" style="font-size: 12px; font-weight:700; color: #ccc;">Degree</span>
+                    <strong class="text-white">B.Sc. in IT(SLIIT)</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-3">
+                  <i class="bi bi-geo-alt fs-3 text-primary"></i>
+                  <div>
+                    <span class="d-block text-uppercase" style="font-size: 12px; font-weight:700; color: #ccc;">Based In</span>
+                    <strong class="text-white">Colombo,Sri Lanka</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-3">
+                  <i class="bi bi-envelope fs-3 text-primary"></i>
+                  <div>
+                    <span class="d-block text-uppercase" style="font-size: 12px; font-weight:700; color: #ccc;">Email</span>
+                    <strong class="text-white">yomalisenevirathne2003@gmail.com</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-3">
+                  <i class="bi bi-phone fs-3 text-primary"></i>
+                  <div>
+                    <span class="d-block text-uppercase" style="font-size: 12px; font-weight:700; color: #ccc;">Phone</span>
+                    <strong class="text-white">076 0386224</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skills Bars -->
+            <h4 class="mb-3" style="font-size: 18px; color: var(--accent-color);">Technical Proficiency</h4>
+            
+            <div class="skill-item">
+              <div class="skill-info"><span>OOP & Java</span> <span>90%</span></div>
+              <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info"><span>MySQL & SQL</span> <span>85%</span></div>
+              <div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info"><span>UI/UX & Figma</span> <span>90%</span></div>
+              <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info"><span>Kotlin (Android)</span> <span>90%</span></div>
+              <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info"><span>Web (JS/PHP)</span> <span>85%</span></div>
+              <div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85"></div></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== MY JOURNEY SECTION ======================== -->
+    <section id="journey" class="resume section">
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">My Journey</span><br>
+        <h1>Academic & Experience Summary</h1>
+        <p>
+          As a dedicated SLIIT 2nd Year undergraduate, this section highlights of my academic background,
+           practical project application, and essential professional skills gained through my coursework.
+        </p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-5">
+          
+          <!-- 1. EXPERIENCE SECTION -->
+          <div class="col-lg-6">
+             <h3 class="mb-4 ps-2 border-start border-3 border-primary">Practical Exposure</h3>
+             
+             <!-- Leo Club -->
+             <div class="mb-4">
+                <div class="exp-card">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="company-logo"><i class="bi bi-people"></i></div>
+                    <div class="period-badge">2025 - Present</div>
+                  </div>
+                  <h3>Leo Club - Member</h3>
+                  <p class="company-name">Leo Club of SLIIT</p>
+                  <p class="description">
+                    Active member of the Leo Club, participating in community service projects, leadership development activities, and volunteer events. This experience has strengthened my teamwork and organizational skills.
+                  </p>
+                </div>
+             </div>
+          </div>
+
+          <!-- 2. EDUCATION SECTION -->
+          <div class="col-lg-6">
+            <h3 class="mb-4 ps-2 border-start border-3 border-primary">Academic Background</h3>
+            
+            <div class="timeline-track">
+                
+                <!-- SLIIT Undergraduate Education -->
+                <div class="timeline-item">
+                  <div class="timeline-marker">
+                    <i class="bi bi-mortarboard-fill"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <div class="education-meta">
+                      <span class="year-range">2023 - Present</span> | <span class="degree-level">Undergraduate</span>
+                    </div>
+                    <h4>B.Sc. Honours Degree in IT</h4>
+                    <p class="institution">Sri Lanka Institute of Information Technology (SLIIT)</p>
+                    <p class="description">
+                      Currently in the 2nd year, focusing on core programming (OOC/OOP), data structures, and database management.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- School Education -->
+                <div class="timeline-item">
+                  <div class="timeline-marker">
+                    <i class="bi bi-book"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <div class="education-meta">
+                      <span class="year-range">2022</span> | <span class="degree-level">G.C.E. A/L</span>
+                    </div>
+                    <h4>Art Stream</h4>
+                    <p class="institution">Sir John Kothalawala college</p>
+                    <p class="description">
+                      A/L Results - Geography - B, ICT - B, Economics - B.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="timeline-item">
+                  <div class="timeline-marker">
+                    <i class="bi bi-patch-check-fill"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h4>Professional Certifications</h4>
+                    
+                    <div class="certifications-list mt-3">
+                      
+                      <div class="cert-item">
+                        <span class="cert-name">Cyber Threat Management</span>
+                        <span class="cert-year">2025</span>
+                        <p class="cert-link"><a href="https://www.credly.com/badges/69ebbb07-f582-4a5e-a65a-600202e08288/linked_in_profile" target="_blank">View Credential <i class="bi bi-box-arrow-up-right"></i></a></p>
+                      </div>
+
+                      <div class="cert-item">
+                        <span class="cert-name">Introduction to Cybersecurity</span>
+                        <span class="cert-year">2025</span>
+                        <p class="cert-link"><a href="https://www.credly.com/badges/cae11fde-b5cc-41a0-b64f-9284be23b0f8/linked_in_profile" target="_blank">View Credential <i class="bi bi-box-arrow-up-right"></i></a></p>
+                      </div>
+
+                      <div class="cert-item">
+                        <span class="cert-name">API Testing path</span>
+                        <span class="cert-year">2025</span>
+                        <p class="cert-link"><a href="https://verify.skilljar.com/c/p92dzi59ftey" target="_blank">View Credential <i class="bi bi-box-arrow-up-right"></i></a></p>
+                      </div>
+
+                      <div class="cert-item">
+                        <span class="cert-name">API Biginner Learning path</span>
+                        <span class="cert-year">2025</span>
+                        <p class="cert-link"><a href="https://verify.skilljar.com/c/rcszqx8p3wxo" target="_blank">View Credential <i class="bi bi-box-arrow-up-right"></i></a></p>
+                      </div>
+
+                      <div class="cert-item">
+                        <span class="cert-name">Microsoft Azure Fundamentals</span>
+                        <span class="cert-year">2025</span>
+                        <p class="cert-link"><a href="#" target="_blank">View Credential <i class="bi bi-box-arrow-up-right"></i></a></p>
+                      </div>
+
+                      <div class="cert-item">
+                        <span class="cert-name">Introduction to IoT</span>
+                        <span class="cert-year">2025</span>
+                        <p class="cert-link"><a href="#" target="_blank">View Credential <i class="bi bi-box-arrow-up-right"></i></a></p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== SKILLS SECTION ======================== -->
+    <section id="skills" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Skills</span><br>
+        <h1>My Technical Offerings</h1>
+        <p>Highlights of my core technical and soft skills, primarily focused on the practical application 
+          of knowledge gained during the first two years of my IT degree at SLIIT.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+            
+            <!-- OOP -->
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+              <div class="service-item">
+                <div class="icon-wrapper"><i class="bi bi-cpu"></i></div>
+                <h4>Object-Oriented Programming</h4>
+                <p>Develop reliable console or desktop applications using core OOP principles (Inheritance, Polymorphism) primarily in Java/C++.</p>
+                <a href="#portfolio" class="read-more"><span>View Projects</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Database -->
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+              <div class="service-item featured">
+                <div class="featured-tag">Core Skill</div>
+                <div class="icon-wrapper"><i class="bi bi-database"></i></div>
+                <h4>Database Design & SQL</h4>
+                <p>Design and implement relational database models (ER diagrams, SQL queries) using MySQL or other standard database systems.</p>
+                <a href="#portfolio" class="read-more"><span>View Projects</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Web Dev -->
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+              <div class="service-item">
+                <div class="icon-wrapper"><i class="bi bi-code-slash"></i></div>
+                <h4>Web Development Fundamentals</h4>
+                <p>Build responsive, static websites using foundational technologies: HTML5, CSS3, and basic vanilla JavaScript.</p>
+                <a href="#portfolio" class="read-more"><span>View Projects</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Problem Solving -->
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+              <div class="service-item">
+                <div class="icon-wrapper"><i class="bi bi-puzzle"></i></div>
+                <h4>Problem Solving & Logic</h4>
+                <p>Applying analytical and algorithmic thinking to solve logical and computational problems efficiently.</p>
+                <a href="#journey" class="read-more"><span>View Skills</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Version Control -->
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+              <div class="service-item">
+                <div class="icon-wrapper"><i class="bi bi-git"></i></div>
+                <h4>Version Control & Collaboration</h4>
+                <p>Proficient in using Git and GitHub for collaborative development, code management, and tracking project changes.</p>
+                <a href="https://github.com/yomalisenevirathne" class="read-more"><span>Visit GitHub</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Documentation -->
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+              <div class="service-item">
+                <div class="icon-wrapper"><i class="bi bi-journal-text"></i></div>
+                <h4>Technical Documentation</h4>
+                <p>Ability to create clear and concise system analysis reports, design specifications, and user manuals for academic projects.</p>
+                <a href="#portfolio" class="read-more"><span>View Examples</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Mobile App -->
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+              <div class="service-item">
+                <div class="icon-wrapper"><i class="bi bi-phone"></i></div>
+                <h4>Mobile App Development</h4>
+                <p>Developing basic Android applications using Kotlin for the frontend and Google Firebase for real-time database and authentication.</p>
+                <a href="#portfolio" class="read-more"><span>View Apps</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- IT Support -->
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+              <div class="service-item">
+                <div class="icon-wrapper"><i class="bi bi-headset"></i></div>
+                <h4>IT Support Fundamentals</h4>
+                <p>Foundational knowledge in hardware, networking, and troubleshooting basic IT issues.</p>
+                <a href="#contact" class="read-more"><span>Contact for Work</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12" data-aos="fade-up" data-aos-delay="200">
+              <div class="cta-box">
+                <div class="row align-items-center">
+                  <div class="col-lg-8">
+                    <h3>Looking to Build a Project or Collaborate?</h3>
+                    <p class="mb-0 text-muted">I'm open to contributing my current technical skills to small-scale academic or personal projects.</p>
+                  </div>
+                  <div class="col-lg-4 text-lg-end text-center mt-3 mt-lg-0">
+                    <a href="#contact" class="cta-btn">Let's Connect</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================== PORTFOLIO SECTION ======================== -->
+    <section id="portfolio" class="portfolio section">
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Gallery</span><br>
+        <h1>Portfolio Showcase</h1>
+        <p>A visual showcase of my technical projects, categorized by technology.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-java">OOP/Java</li>
+            <li data-filter=".filter-ui">UI/UX</li>
+            <li data-filter=".filter-kotlin">Kotlin</li>
+            <li data-filter=".filter-web">MERN</li>
+          </ul>
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+            <!-- Item 1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-java">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/staff.jpg" class="img-fluid" alt="SMS">
+                <div class="portfolio-info-overlay">
+                  <h4>TaskMinds <h4>
+                  <h5>Staff Management System</h5>
+                  <div class="portfolio-links">
+                    <a href="assets/img/portfolio/staff.jpg" class="glightbox" title="Staff Management"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://github.com/yomalisenevirathne/Online-Staff-Management-System" target="_blank" title="Details"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-meta">
+                    <div class="project-tags">
+                      <span class="tag">Java (JSP/Servlet)</span>
+                      <span class="tag">MySQL</span>
+                      <span class="tag">DBMS</span>
+                    </div>
+                    <div class="project-year">2024</div>
+                  </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/petcareUI.jpg" class="img-fluid" alt="UIUX">
+                <div class="portfolio-info-overlay">
+                  <h4>PawfectCare UI/UX Design</h4>
+                  <div class="portfolio-links">
+                    <a href="assets/img/portfolio/petcareUI.jpg" class="glightbox" title="UI/UX"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://github.com/yomalisenevirathne/PetCare-UI-UX" target="_blank" title="Details"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-meta">
+                    <div class="project-tags">
+                      <span class="tag">Figma</span>
+                      <span class="tag">UI/UX</span>
+                      <span class="tag">Prototyping</span>
+                    </div>
+                    <div class="project-year">2025</div>
+                  </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kotlin">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/petcare.jpg" class="img-fluid" alt="App">
+                <div class="portfolio-info-overlay">
+                  <h4>PawfectCare App</h4>
+                  <div class="portfolio-links">
+                    <a href="assets/img/portfolio/petcare.jpg" class="glightbox" title="App"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://github.com/yomalisenevirathne/PawfectCare" target="_blank" title="Details"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-meta">
+                    <div class="project-tags">
+                      <span class="tag">Kotlin</span>
+                      <span class="tag">Android Studio</span>
+                    </div>
+                    <div class="project-year">2025</div>
+                  </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/sport.jpg" class="img-fluid" alt="Web">
+                <div class="portfolio-info-overlay">
+                  <h4>SportNest</h4>
+                  <h5>Sport Club Management System</h5>
+                  <div class="portfolio-links">
+                    <a href="assets/img/portfolio/sport.jpg" class="glightbox" title="Web"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://github.com/NisithAkalanka/SportNest" target="_blank" title="Details"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-meta">
+                    <div class="project-tags">
+                      <span class="tag">MERN</span>
+                      <span class="tag">JavaScript</span>
+                    </div>
+                    <div class="project-year">2025</div>
+                  </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-java">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/parking.jpg" class="img-fluid" alt="PHP">
+                <div class="portfolio-info-overlay">
+                  <h4>Space Finder</h4>
+                  <h5>Automated Parking System</h5>
+                  <div class="portfolio-links">
+                    <a href="assets/img/portfolio/parking.jpg" class="glightbox" title="Parking System"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://github.com/yomalisenevirathne/Automated-Parking-System" target="_blank" title="Details"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-meta">
+                    <div class="project-tags">
+                      <span class="tag">PHP (Web)</span>
+                      <span class="tag">MySQL</span>
+                      <span class="tag">DBMS</span>
+                    </div>
+                    <div class="project-year">2024</div>
+                  </div>
+            </div>
+
+             <!-- Item 6 -->
+             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kotlin">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/zeno.jpg" class="img-fluid" alt="Zenova">
+                <div class="portfolio-info-overlay">
+                  <h4>Zenova</h4>
+                  <h5>HabitTracker</h5>
+                  <div class="portfolio-links">
+                    <a href="assets/img/portfolio/zeno.jpg" class="glightbox" title="Zenova"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://github.com/yomalisenevirathne/Zenova-HabbitTracker" target="_blank" title="Details"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-meta">
+      <div class="project-tags">
+        <span class="tag">Kotlin</span>
+        <span class="tag">SharedPreferences</span>
+        <span class="tag">Android Studio</span>
+      </div>
+      <div class="project-year">2025</div>
+    </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== CONTACT SECTION ======================== -->
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Get in Touch</span><br>
+        <h1>Contact Me</h1>
+        <p>Have a project in mind or want to collaborate? Feel free to reach out.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          
+          <div class="col-lg-4">
+            <div class="d-flex flex-column gap-3">
+              <div class="info-item">
+                <div class="icon-wrapper"><i class="bi bi-geo-alt"></i></div>
+                <div><h3>Address</h3><p>Waralla waththa, Mohoththawa, Torayaya</p></div>
+              </div>
+              <div class="info-item">
+                <div class="icon-wrapper"><i class="bi bi-telephone"></i></div>
+                <div><h3>Call Me</h3><p>076 0386224</p></div>
+              </div>
+              <div class="info-item">
+                <div class="icon-wrapper"><i class="bi bi-envelope"></i></div>
+                <div><h3>Email</h3><p>yomalisenevirathne2003@gmail.com</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form p-4 rounded bg-dark border border-secondary border-opacity-25">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer id="footer" class="footer position-relative">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center mb-3">
+            <span class="sitename text-white fs-4 fw-bold">Yomali</span>
+          </a>
+          <p>Portfolio of Yomali Senevirathne. Let's build something amazing together.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://github.com/yomalisenevirathne"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/yomalisenevirathne/"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4 class="text-white">Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4 class="text-white">Contact</h4>
+          <p>waralla waththa,</p>
+          <p>Mohoththawa thorayaya</p>
+          <p class="mt-3"><strong>Phone:</strong> 076 0386224</p>
+          <p><strong>Email:</strong> yomalisenevirathne2003@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4 border-top border-secondary border-opacity-10 pt-4">
+      <p></span></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Inline Script for Progress Bar & Typed Animation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Re-init AOS for smoother effects
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 800, easing: 'ease-in-out', once: true, mirror: false });
+      }
+
+      // Initialize Typed.js
+      const typedEl = document.querySelector('.typed');
+      if (typedEl) {
+        let typedItems = typedEl.getAttribute('data-typed-items');
+        typedItems = typedItems.split(',');
+        new Typed('.typed', {
+          strings: typedItems,
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000,
+          loop: true
+        });
+      }
+
+      // Animate Progress Bars on Scroll
+      const skillsSection = document.querySelector('#about');
+      const progressBars = document.querySelectorAll('.progress-bar');
+      
+      const animateSkills = () => {
+        progressBars.forEach(bar => {
+          const value = bar.getAttribute('aria-valuenow');
+          bar.style.width = value + '%';
+        });
+      };
+
+      if(skillsSection) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if(entry.isIntersecting) {
+              animateSkills();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+        observer.observe(skillsSection);
+      }
+    });
+  </script>
+
+</body>
+</html>
